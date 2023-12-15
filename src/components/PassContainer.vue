@@ -7,6 +7,8 @@ import Slider from "./Slider.vue";
 const DEFAULT_PASSWORD_LENGTH = 14;
 const password = ref("passgen");
 const passwordLength = ref(DEFAULT_PASSWORD_LENGTH);
+const strength = ref("");
+const strengthLevel = ref(0);
 const setupConfigs = ref([
   {
     name: "Include Uppercase Letters",
@@ -25,9 +27,6 @@ const setupConfigs = ref([
     active: true
   }
 ]);
-
-const strength = ref("");
-const strengthLevel = ref(0);
 
 function checked(configName) {
   const config = setupConfigs.value.find(item => item.name == configName);
